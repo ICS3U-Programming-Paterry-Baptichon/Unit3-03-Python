@@ -1,25 +1,28 @@
-# Created by: Paterry Baptichon
-# Created on : 2022-03-31
-# This program is a guessing game where the user has to guess my age.
+#!/usr/bin/env python3
 
+# Created by Paterry Bpatichon Junior
+# Created 2022-03-31
+# This program prompts a user to guess a number
+# and tells them if they are correct or not (random number).
 
-import constants
+import random
 
 
 def main():
-    # this function checks if there is over 30 students
+    # this function gets a guess then checks if it is right
 
     # input
-    Lucky_number = int(input("How old do you think I am?: "))
-    print("")
+    guessed_number = int(input("Enter a number between 0 and 10: "))
 
     # process & output
-    if Lucky_number == constants.MY_LUCKY_NUMBER:
-        print("correct")
+    random_number = random.randint(0, 10)  # a number between 0 and 9
+    if guessed_number == random_number:
+        print("Correct!")
     else:
-      print("Not correct!")
+        print(
+            "Not correct, the answer is {}.".format(random_number)
+        )
 
 
 if __name__ == "__main__":
     main()
-  
